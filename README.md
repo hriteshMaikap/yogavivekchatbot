@@ -157,14 +157,14 @@ npm run dev
 ### **3️⃣ Run with Docker (Recommended)**
 ```bash
 # Backend
-cd backend
-docker build -t rag-backend .
-docker run -p 8000:8000 rag-backend
+cd iks-rag-pipelines
+docker build -t iks-rag-pipelines .
+docker run -p 8000:8000 iks-rag-pipelines
 
 # Frontend
-cd frontend
-docker build -t rag-frontend .
-docker run -p 3000:3000 rag-frontend
+cd iks-rag-ui
+docker build -t iks-rag-ui .
+docker run -p 3000:3000 iks-rag-ui
 ```
 
 ---
@@ -175,18 +175,18 @@ docker run -p 3000:3000 rag-frontend
 version: '3.8'
 services:
   backend:
-    build: ./backend
+    build: ./iks-rag-pipelines
     ports:
       - "8000:8000"
     environment:
       - ENV=production
   
   frontend:
-    build: ./frontend
+    build: ./iks-rag-ui
     ports:
       - "3000:3000"
     depends_on:
-      - backend
+      - iks-rag-pipelines
 ```
 ```bash
 docker-compose up --build
@@ -212,5 +212,6 @@ This project is licensed under the **MIT License**. Feel free to contribute! �
 
 ## 🎯 Contributors
 -**To be updated**
+
 💡 *Open to contributions! Feel free to fork and improve!* 😃
 
