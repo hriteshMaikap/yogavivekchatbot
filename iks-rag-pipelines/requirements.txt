@@ -1,0 +1,6 @@
+python-dotenv
+sentence-transformers
+groq
+'numpy<2'
+pandas
+qdrant-client
